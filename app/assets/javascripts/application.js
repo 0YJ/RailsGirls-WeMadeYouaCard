@@ -12,4 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require underscore
+//= require backbone
+//= require backbone_rails_sync
+//= require backbone_datalink
+//= require backbone/wemadeyouacard
+//= require ../../../vendor/assets/circleplayer/js/jquery.jplayer
+//= require ../../../vendor/assets/circleplayer/js/jquery.grab
+//= require ../../../vendor/assets/circleplayer/js/jquery.transform2d
+//= require ../../../vendor/assets/circleplayer/js/circle.player
+
