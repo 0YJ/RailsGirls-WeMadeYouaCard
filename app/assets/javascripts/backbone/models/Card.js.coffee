@@ -11,7 +11,7 @@ jQuery ->
       title: "Koolaid man says, 'oh, yeah.'"
 
   class window.Cards extends Backbone.Collection
-    model : Card
+    model : window.Card
     url   : '/cards.json'
 
     initialize: ->

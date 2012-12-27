@@ -4,8 +4,8 @@ jQuery ->
       ''                             : "indexCards"
       '/cards'                       : "indexCards"
       '/cards/:id'                   : "showCard"
-      '/cards/:card_id/messages'     : 'indexMessages'
-      '/cards/:card_id/messages/:id' : 'showMessage'
+      '/cards/:card_id/messages'     : "indexMessages"
+      '/cards/:card_id/messages/:id' : "showMessage"
 
     showCard: ->
       card = new Card {id: @id}
@@ -17,17 +17,17 @@ jQuery ->
       cards.fetch()
 
     showMessage: ->
+      alert "it worked"
       message = new Message {id: @id}
       message.fetch()
+      # jQuery ('audio').jPlayer()
+      message_player = new CirclePlayer('#cp_container', {"/uploads/message/audio/1/5th_Element.mp3"}, { cssSelectorAncestor: "#cp_container" })
 
     indexMessages: ->
       card = new Card {id: @card_id}
       card.messages
+  window.router = new AppRouter()
 
-jQuery ->
-  window.app_router = new AppRouter
-
-  Backbone.history.start
-    pushState: true
+  Backbone.history.start()
 
 
