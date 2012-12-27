@@ -1,5 +1,9 @@
-<%= form_for( @message, :url => { :action => :new }, :html => {:multipart => true}) do |f| %>
-  <%= f.file_field :image %>
+<%= form_for( @message, :url => card_message_path(@message), :html => {:multipart => true}) do |f| %>
+  <%= f.label :image %>
+  <%= f.file_field :image, :accept => 'file', :accept => 'image/*;capture=camera' %>
+  <br/>
+  <%= f.label :audio %>
+  <%= f.file_field :audio, :type => 'file', :accept => 'audio/*;capture=microphone' %>
   <% if @message.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>

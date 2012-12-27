@@ -8,24 +8,14 @@
 
 <% @messages.each do |message| %>
   <tr>
-    <td><%= message.try("image") %></td>
+    <td><%= image_tag message.image_url %></td>
   </tr>
   <tr>
-    <td><%= link_to 'Show', message %></td>
+    <td><%= link_to 'Show', card_message_path(params[:card_id], message.id) %></td>
   </tr>
 <% end %>
 </table>
 
-<div class"new_message">
-  <form accept-charset="UTF-8" action="/cards/1/messages/new" class="new_message" enctype="multipart/form-data" id="new_message" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="2gZIwktk9Kc0haoVRwRBH0esi6U64LgzbeCct6u3q8Y=" /></div>
-    <input id="message_image" name="message[image]" type="file"  capture='camera'/>
-    <br/>
-    <input id="message_soundbyte" name="message[soundbyte]" type="file" capture='camera'/>
-    <div class="actions">
-      <input name="commit" type="submit" value="Create Message" />
-    </div>
-  </form>
-</div>
 <br />
 
 <%= link_to 'New Message', new_card_message_path %>

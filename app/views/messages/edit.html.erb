@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @message %> |
-<%= link_to 'Back', messages_path %>
+<%= link_to 'Show', card_message_path(params[:card_id], @message) %> |
+<%= link_to 'Back', card_messages_path(params[:card_id])%>
