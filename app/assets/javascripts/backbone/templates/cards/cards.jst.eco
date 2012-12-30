@@ -1,0 +1,10 @@
+<h1 class="ui-title-a"> Listing cards </h1>
+
+<h2>Title</h2>
+<div class="">
+  <ul class="cards">
+  </ul>
+</div>
+
+<p><a href='/cards/new'>create a new card</a></p>
+

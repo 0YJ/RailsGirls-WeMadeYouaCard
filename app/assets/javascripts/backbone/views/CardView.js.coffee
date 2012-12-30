@@ -2,29 +2,31 @@ jQuery ->
 
   class window.CardView extends Backbone.View
 
-    el:  $('ul:first')
-    model: Card
+    tagName: "li"
+
+    model: window.Card
 
     initialize: ->
       _.bindAll @, 'render'
-      @model.bind 'change:title' , @render
-
-    initialRender: ->
+      @model.bind 'change' , @render
 
     render: ->
-      @$el.append('<li><a href="cards/' + @model.id + '/messages">' + @model.get('title') + '</a></li>')
+      $('ul.cards').append "<a href='cards/#{@model.id}/messages' data-remote='true'>#{@model.get('title')}</a>"
 
   class window.CardsView extends CardView
 
-    urlRoot: '/cards.json'
+    template: JST['backbone/templates/cards/cards']
 
     initialize: ->
-      _.bindAll @
+      _.bindAll(@, 'render')
       @collection.bind 'reset', @render
 
+    urlRoot: '/cards.json'
+
     render: ->
-      $cards = @.$('.cards')
+      $('#container').replaceWith( @$el.html(@template) )
+      console.log "template: ", @template()
       @collection.each (card) ->
-        view = new CardView model: card, collection: @collection
-        $cards.append view.render().el
+        view = new CardView model: card
+        view.render()
       @
