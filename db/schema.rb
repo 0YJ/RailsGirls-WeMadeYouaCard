@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121225001709) do
+ActiveRecord::Schema.define(:version => 20121230213719) do
 
   create_table "cards", :force => true do |t|
     t.string   "title"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20121225001709) do
     t.datetime "updated_at", :null => false
     t.string   "image"
     t.string   "audio"
+    t.integer  "card_id"
   end
 
 end
