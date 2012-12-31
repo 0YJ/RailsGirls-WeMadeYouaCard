@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @messages = Card.find(params[:card_id]).messages
 
     respond_to do |format|
       format.html # index.html.erb
