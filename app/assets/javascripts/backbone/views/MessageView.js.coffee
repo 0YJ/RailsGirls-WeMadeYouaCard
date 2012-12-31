@@ -17,7 +17,7 @@ jQuery ->
 
   class window.MessagesView extends Backbone.View
 
-    el: $ 'body'
+    el: '#container'
 
     initialize: ->
       _.bindAll @
@@ -34,6 +34,7 @@ jQuery ->
       @collection.add message
 
     appendItem: (message) ->
+      $('#container').empty()
       message_view = new MessageView model: message
       $('ul:first').append message_view.render().el
 

@@ -11,7 +11,7 @@ jQuery ->
       @model.bind 'change' , @render
 
     render: ->
-      $('ul.cards').append "<a href='cards/#{@model.id}/messages' data-remote='true'>#{@model.get('title')}</a>"
+      $('ul.cards').append "<a href='cards/#{@model.id}/messages.json' data-remote='true'>#{@model.get('title')}</a>"
 
   class window.CardsView extends CardView
 
