@@ -5,7 +5,6 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :email 
       t.date :date_of_birth 
 
-      # Rails auto solve date
       t.timestamps
     end
   end
